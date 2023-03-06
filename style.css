@@ -1,0 +1,61 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    height: 100vh;
+    overflow: hidden;
+    /* display: grid; */
+    /* place-items: center; */
+
+}
+#blob{
+    background-color: rgb(255, 255, 255);
+    height: 250px;
+    aspect-ratio: 1;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    translate: -50% -50%;
+    border-radius: 50%;
+    background:linear-gradient(
+        to right,
+        aquamarine,
+        mediumpurple
+    );
+    animation:rotate 20s infinite;
+}
+
+#blur{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: 2;
+    backdrop-filter: blur(100px);
+    display: grid;
+    place-items: center;
+
+}
+
+@keyframes rotate{
+    from{
+        rotate:0deg;
+    }
+    50%{
+        scale: 1 1.5;
+    }
+    to{
+        rotate:360deg;
+    }
+}
+
+/* <---------Text effect---------------> */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+h1{
+    color: white;
+    letter-spacing: 2px;
+    font-family: 'Roboto Mono', monospace;
+    text-transform:uppercase;
+    font-size: 3.5rem;
+    padding: 0rem clamp(1rem, 2vw, 3rem);
+    border-radius: clamp(0.4rem, 0.75vw, 1rem);
+}
